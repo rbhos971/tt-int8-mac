@@ -16,12 +16,33 @@ module tt_um_example (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-  // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
-  assign uio_out = 0;
-  assign uio_oe  = 0;
+  wire [1:0]  op       = uio_in[1:0];
+  wire [1:0]  byte_sel = uio_in[3:2];
+ 
+  wire signed [23:0] acc;
+  wire valid;
+  wire overflow;
+ 
+  mac u_mac (
+      .clk      (clk),
+      .rst_n    (rst_n),
+      .data_in  (ui_in),
+      .op       (op),
+      .acc      (acc),
+      .valid    (valid),
+      .overflow (overflow)
+  );
+
+  assign uo_out = (byte_sel == 2'd0) ? acc[7:0]   :
+                  (byte_sel == 2'd1) ? acc[15:8]  :
+                  (byte_sel == 2'd2) ? acc[23:16] :
+                                       8'd0;
+
+  assign uio_oe  = 8'b1100_0000;
+  assign uio_out = {overflow, valid, 6'b0};
+
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, clk, rst_n, 1'b0};
+  wire _unused = &{ena, uio_in[7:4], 1'b0};
 
 endmodule
