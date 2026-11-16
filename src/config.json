@@ -17,7 +17,7 @@
 
   "//": "CLOCK_PERIOD - Increase this in case you are getting setup time violations.",
   "//": "The value is in nanoseconds, so 20ns == 50MHz.",
-  "CLOCK_PERIOD": 20,
+  "CLOCK_PERIOD": 21,
 
   "//": "Hold slack margin - Increase them in case you are getting hold violations.",
   "PL_RESIZER_HOLD_SLACK_MARGIN": 0.1,
@@ -34,8 +34,8 @@
   "//": "Configuration docs: https://librelane.readthedocs.io/en/latest/reference/configuration.html",
 
   "SYNTH_STRATEGY": "DELAY 1",
-  "PL_RESIZER_SETUP_SLACK_MARGIN": 8,
-  "GRT_RESIZER_SETUP_SLACK_MARGIN": 8,
+  "PL_RESIZER_SETUP_SLACK_MARGIN": 7,
+  "GRT_RESIZER_SETUP_SLACK_MARGIN": 7,
 
   "//": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
   "//": "!!! DO NOT CHANGE ANYTHING BELOW THIS POINT !!!",
