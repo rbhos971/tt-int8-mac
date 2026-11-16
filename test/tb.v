@@ -28,7 +28,7 @@ module tb ();
 `endif
 
   // Replace tt_um_example with your module name:
-  tt_um_rbhos971_int8_mac (
+  tt_um_rbhos971_int8_mac user_project (
 
       // Include power ports for the Gate Level test:
 `ifdef GL_TEST
