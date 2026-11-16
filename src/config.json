@@ -34,8 +34,8 @@
   "//": "Configuration docs: https://librelane.readthedocs.io/en/latest/reference/configuration.html",
 
   "SYNTH_STRATEGY": "DELAY 1",
-  "PL_RESIZER_SETUP_SLACK_MARGIN": 7,
-  "GRT_RESIZER_SETUP_SLACK_MARGIN": 7,
+  "PL_RESIZER_SETUP_SLACK_MARGIN": 8,
+  "GRT_RESIZER_SETUP_SLACK_MARGIN": 8,
 
   "//": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
   "//": "!!! DO NOT CHANGE ANYTHING BELOW THIS POINT !!!",
